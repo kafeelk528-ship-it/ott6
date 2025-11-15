@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard — OTT Store{% endblock %}
+
+{% block content %}
+<h2 class="page-title">Admin Dashboard (Demo)</h2>
+
+<p class="muted">This is a demo admin panel for your minor project presentation.</p>
+
+<div class="admin-grid">
+
+  <div class="card stat-card">
+    <h4>Total Plans</h4>
+    <div class="stat-number">{{ plans|length }}</div>
+  </div>
+
+  <div class="card stat-card">
+    <h4>Recent Orders</h4>
+    <div class="stat-number">3 (Demo)</div>
+  </div>
+
+  <div class="card stat-card">
+    <h4>Active Users</h4>
+    <div class="stat-number">12 (Demo)</div>
+  </div>
+
+</div>
+
+<h3 class="sub-title">Manage Plans (Demo Section)</h3>
+
+<div class="plans-admin-list">
+  {% for p in plans %}
+  <div class="card admin-plan-card">
+    <img src="{{ url_for('static', filename=p.logo) }}" class="admin-logo">
+    
+    <div class="plan-info">
+      <strong>{{ p.name }}</strong>
+      <p class="muted">₹{{ p.price }}</p>
+    </div>
+
+    <div class="admin-actions">
+      <button class="btn small outlined">Edit</button>
+      <button class="btn small ghost">Delete</button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
