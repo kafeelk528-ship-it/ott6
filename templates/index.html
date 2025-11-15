@@ -1,25 +1,26 @@
 {% extends "base.html" %}
-{% block title %}Home — OTT Store{% endblock %}
+{% block title %}OTT Store — Home{% endblock %}
+
 {% block content %}
-<section class="hero">
-  <div class="hero-left">
-    <h1>Sell top OTT subscriptions — fast & secure</h1>
-    <p class="lead">Instant checkout in Stripe test mode. Perfect for demo and college projects.</p>
-    <div class="cta">
-      <a class="btn primary" href="{{ url_for('show_plans') }}">Browse Plans</a>
-      <a class="btn ghost" href="{{ url_for('show_plans') }}">Quick Demo</a>
+
+<div class="hero-banner">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>Buy & Sell OTT Subscriptions Instantly</h1>
+        <p class="tagline">Fast • Secure • Demo Stripe Checkout</p>
+
+        <a class="btn primary" href="{{ url_for('show_plans') }}">Explore Plans</a>
+        <a class="btn ghost" href="{{ url_for('show_plans') }}">Quick Demo</a>
     </div>
-  </div>
-  <div class="hero-right">
-    <img src="{{ url_for('static', filename='hero-dark.png') }}" alt="OTT illustration" class="hero-img">
-  </div>
-</section>
+</div>
 
 <section class="logos-row">
-  <img src="{{ url_for('static', filename='netflix.png') }}" alt="netflix">
-  <img src="{{ url_for('static', filename='prime.png') }}" alt="prime">
-  <img src="{{ url_for('static', filename='hotstar.png') }}" alt="hotstar">
-  <img src="{{ url_for('static', filename='sonyliv.png') }}" alt="sonyliv">
-  <img src="{{ url_for('static', filename='zee5.png') }}" alt="zee5">
+  <img src="{{ url_for('static', filename='netflix.png') }}">
+  <img src="{{ url_for('static', filename='prime.png') }}">
+  <img src="{{ url_for('static', filename='hotstar.png') }}">
+  <img src="{{ url_for('static', filename='sonyliv.png') }}">
+  <img src="{{ url_for('static', filename='zee5.png') }}">
 </section>
+
 {% endblock %}
